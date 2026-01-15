@@ -10,8 +10,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BioScreen3() {
 
-    val name = "Juan Dela Cruz"
-    val section = "BSIT 2-A"
+    val name = "Gian S. Candelario"
+    val section = "3IT-A"
     val age = "21"
 
     Column(modifier = Modifier.padding(16.dp)) {
