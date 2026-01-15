@@ -72,7 +72,7 @@ fun MainScreen(){
         }
 
         composable("screen4"){
-
+            BioScreen4();
         }
 
         composable("screen5"){
