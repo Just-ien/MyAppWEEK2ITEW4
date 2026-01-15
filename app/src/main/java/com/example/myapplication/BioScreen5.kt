@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BioScreen5() {
 
-    val name = "Dacillo, Frenz Dave B."
+    val name = "Frenz Dave B. Dacillo"
     val section = "3IT-A"
     val age = "20"
 
