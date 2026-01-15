@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -79,6 +80,10 @@ fun MainScreen(){
             BioScreen5();
         }
 
+        composable("screen1"){
+            BioScreen1();
+        }
+
     }
 
 
@@ -95,13 +100,9 @@ fun Screen1(controller: NavController){
         horizontalAlignment = Alignment.CenterHorizontally
     ){
 
-        Text("Dashboard");
-        Text("Name: Justine Carlo F. Brillantes");
-        Text("Age: 20");
-        Text("Section: 3 BSIT - A");
 
         Button(onClick = {
-            controller.navigate("home");
+            controller.navigate("screen1");
         }){
             Text("Button 1")
         }
@@ -118,14 +119,33 @@ fun Screen1(controller: NavController){
             Text("Button 3")
         }
 
-        Button(onClick = {}){
+        Button(onClick = {
+            controller.navigate("screen4");
+        }){
             Text("Button 4")
         }
 
-        Button(onClick = {}){
+        Button(onClick = {
+            controller.navigate("screen5");
+        }){
             Text("Button 5")
         }
 
     }
 
+}
+
+
+@Composable
+fun BioScreen1() {
+
+    val name = "Justine Carlo F. Brillantes"
+    val section = "3IT-A"
+    val age = "20"
+
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(text = "Name: $name")
+        Text(text = "Section: $section")
+        Text(text = "Age: $age")
+    }
 }
