@@ -79,6 +79,9 @@ fun Screen1(controller: NavController){
     ){
 
         Text("Dashboard");
+        Text("Name: Justine Carlo F. Brillantes");
+        Text("Age: 20");
+        Text("Section: 3 BSIT - A");
 
         Button(onClick = {
             controller.navigate("home");
