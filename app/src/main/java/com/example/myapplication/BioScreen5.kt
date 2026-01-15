@@ -2,13 +2,15 @@ package com.example.myapplication
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun BioScreen5() {
+fun BioScreen5(cont: NavController) {
 
     val name = "Frenz Dave B. Dacillo"
     val section = "3IT-A"
@@ -18,5 +20,10 @@ fun BioScreen5() {
         Text(text = "Name: $name")
         Text(text = "Section: $section")
         Text(text = "Age: $age")
+        Button(onClick = {
+            cont.popBackStack();
+        }){
+            Text("Back");
+        }
     }
 }

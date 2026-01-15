@@ -65,23 +65,23 @@ fun MainScreen(){
         }
 
         composable("screen2"){
-            BioScreen2();
+            BioScreen2(controller);
         }
 
         composable("screen3"){
-            BioScreen3();
+            BioScreen3(controller);
         }
 
         composable("screen4"){
-            BioScreen4();
+            BioScreen4(controller);
         }
 
         composable("screen5"){
-            BioScreen5();
+            BioScreen5(controller);
         }
 
         composable("screen1"){
-            BioScreen1();
+            BioScreen1(controller);
         }
 
     }
@@ -137,7 +137,7 @@ fun Screen1(controller: NavController){
 
 
 @Composable
-fun BioScreen1() {
+fun BioScreen1(cont: NavController) {
 
     val name = "Justine Carlo F. Brillantes"
     val section = "3IT-A"
@@ -147,5 +147,10 @@ fun BioScreen1() {
         Text(text = "Name: $name")
         Text(text = "Section: $section")
         Text(text = "Age: $age")
+        Button(onClick = {
+            cont.popBackStack();
+        }){
+            Text("Back");
+        }
     }
 }
