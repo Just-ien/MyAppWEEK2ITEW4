@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BioScreen3() {
+fun BioScreen2() {
 
     val name = "Irah Christine B. Brutas"
     val section = "3IT-A"

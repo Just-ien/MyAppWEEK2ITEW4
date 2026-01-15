@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import BioScreen2
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -62,6 +63,22 @@ fun MainScreen(){
             Screen1(controller);
         }
 
+        composable("screen2"){
+            BioScreen2();
+        }
+
+        composable("screen3"){
+            BioScreen3();
+        }
+
+        composable("screen4"){
+
+        }
+
+        composable("screen5"){
+            BioScreen5();
+        }
+
     }
 
 
@@ -89,11 +106,15 @@ fun Screen1(controller: NavController){
             Text("Button 1")
         }
 
-        Button(onClick = {}){
+        Button(onClick = {
+            controller.navigate("screen2");
+        }){
             Text("Button 2")
         }
 
-        Button(onClick = {}){
+        Button(onClick = {
+            controller.navigate("screen3")
+        }){
             Text("Button 3")
         }
 
