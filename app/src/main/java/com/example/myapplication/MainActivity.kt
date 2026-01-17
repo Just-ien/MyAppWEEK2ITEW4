@@ -134,23 +134,3 @@ fun Screen1(controller: NavController){
     }
 
 }
-
-
-@Composable
-fun BioScreen1(cont: NavController) {
-
-    val name = "Justine Carlo F. Brillantes"
-    val section = "3IT-A"
-    val age = "20"
-
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = "Name: $name")
-        Text(text = "Section: $section")
-        Text(text = "Age: $age")
-        Button(onClick = {
-            cont.popBackStack();
-        }){
-            Text("Back");
-        }
-    }
-}
