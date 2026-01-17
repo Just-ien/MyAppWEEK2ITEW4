@@ -31,7 +31,7 @@ import androidx.navigation.NavController
 fun BioScreen5(cont: NavController) {
 
     val name = "Frenz Dave B. Dacillo"
-    val bio = "I'm Frenz Dave B. Dacillo, currently a 3rd year BSIT student, 21 years old. Learning Java, PHP, HTML and more."
+    val bio = "I'm Frenz Dave B. Dacillo, currently a 3rd year BSIT student, 21 years old. Learning Java, PHP, HTML, JavaScript and more."
 
     Column(
         modifier = Modifier
