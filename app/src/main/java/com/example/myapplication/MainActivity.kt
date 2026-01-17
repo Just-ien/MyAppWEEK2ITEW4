@@ -98,55 +98,6 @@ fun MainScreen(){
 @Composable
 fun Screen1(controller: NavController){
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White),
-        verticalArrangement = Arrangement.SpaceEvenly,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
-
-
-        Button(onClick = {
-            controller.navigate("screen1");
-        }){
-            Text("Button 1")
-        }
-
-        Button(onClick = {
-            controller.navigate("screen2");
-        }){
-            Text("Button 2")
-        }
-
-        Button(onClick = {
-            controller.navigate("screen3")
-        }){
-            Text("Button 3")
-        }
-
-        Button(onClick = {
-            controller.navigate("screen4");
-        }){
-            Text("Button 4")
-        }
-
-        Button(onClick = {
-            controller.navigate("screen5");
-        }){
-            Text("Button 5")
-        }
-
-    }
-
-}
-
-@Composable
-@Preview(showBackground=true)
-fun testScreen(){
-
-    val controller = rememberNavController();
-
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -172,7 +123,6 @@ fun testScreen(){
             namePlate("CAYLAS", controller, Color(0XFF111F35));
         }
     }
-
 
 }
 
