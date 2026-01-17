@@ -124,7 +124,7 @@ fun BioScreen1(cont: NavController) {
 }
 
 @Composable
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 fun prev(){
     val cont = rememberNavController();
     BioScreen1(cont);
