@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-import BioScreen2
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,6 +31,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,6 +71,10 @@ fun MainScreen(){
             Screen1(controller);
         }
 
+        composable("screen1"){
+            BioScreen1(controller);
+        }
+
         composable("screen2"){
             BioScreen2(controller);
         }
@@ -86,10 +91,6 @@ fun MainScreen(){
             BioScreen5(controller);
         }
 
-        composable("screen1"){
-            BioScreen1(controller);
-        }
-
     }
 
 
@@ -104,30 +105,31 @@ fun Screen1(controller: NavController){
             .background(Color.White)
     ){
         item{
-            namePlate("BRILLANTES", controller, Color(0xFFF63049));
+            namePlate("BRILLANTES", controller, Color(0xFFF63049), "screen1");
         }
 
         item {
-            namePlate("BRUTAS", controller, Color(0xFFD02752));
+            namePlate("BRUTAS", controller, Color(0xFFD02752), "screen2");
         }
 
         item {
-            namePlate("CANDELARIO", controller, Color(0xFF8A244B));
+            namePlate("CANDELARIO", controller, Color(0xFF8A244B), "screen3");
         }
 
         item {
-            namePlate("DACILLO", controller, Color(0xFF5C1A2B));
+            namePlate("CAYLAS", controller, Color(0XFF111F35), "screen4");
+
         }
 
         item {
-            namePlate("CAYLAS", controller, Color(0XFF111F35));
+            namePlate("DACILLO", controller, Color(0xFF1A5C5C), "screen5");
         }
     }
 
 }
 
 @Composable
-fun namePlate(name: String, controller: NavController, color: Color){
+fun namePlate(name: String, controller: NavController, color: Color, screen: String){
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -136,16 +138,26 @@ fun namePlate(name: String, controller: NavController, color: Color){
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceBetween
     ){
-        Text(modifier = Modifier.padding(start = 10.dp), color = Color(0xFFBBEEDD), text = name, fontFamily = FontFamily(Font(R.font.komika)), fontSize = 40.sp);
+        Text(
+            modifier = Modifier.padding(start = 10.dp),
+            color = Color(0xFFBBEEDD),
+            text = name,
+            fontFamily = FontFamily(Font(R.font.komika)),
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        );
 
         Button(
-            modifier = Modifier.padding(end = 3.dp),
+            modifier = Modifier.padding(end = 10.dp, bottom = 10.dp),
             onClick = {
-            controller.navigate("screen1");
-        }, colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF715578)
-        )){
-            Text("View >>>")
+                controller.navigate(screen);
+            },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(0xFF0288D1),
+                contentColor = Color.White
+            )
+        ){
+            Text("View >>>", fontWeight = FontWeight.Bold)
         }
     }
 }

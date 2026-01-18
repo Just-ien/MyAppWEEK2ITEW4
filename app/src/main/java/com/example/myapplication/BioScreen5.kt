@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -35,9 +37,17 @@ fun BioScreen5(cont: NavController) {
 
     Column(
         modifier = Modifier
-            .padding(16.dp)
             .fillMaxWidth()
-            .fillMaxHeight(),
+            .fillMaxHeight()
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFFEEEEEE),
+                        Color(0xFFCCCCCC)
+                    )
+                )
+            )
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -45,7 +55,10 @@ fun BioScreen5(cont: NavController) {
             modifier = Modifier
                 .size(150.dp),
             shape = CircleShape,
-            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(0xFFFFFFFF)
+            )
         ) {
             Image(
                 painter = painterResource(id = R.drawable.student5),
@@ -58,10 +71,11 @@ fun BioScreen5(cont: NavController) {
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(
-            text = "Name: $name",
+            text = "$name",
             fontSize = 16.sp,
             fontWeight = FontWeight.Medium,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = Color(0xFF01579B)
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -77,7 +91,7 @@ fun BioScreen5(cont: NavController) {
                 .fillMaxWidth()
                 .padding(8.dp),
             colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFF5F5F5)
+                containerColor = Color(0xFFFFFFFF)
             ),
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
         ) {
@@ -87,7 +101,7 @@ fun BioScreen5(cont: NavController) {
                 fontWeight = FontWeight.Normal,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(16.dp),
-                color = Color(0xFF333333)
+                color = Color(0xFF01579B)
             )
         }
 
@@ -101,8 +115,8 @@ fun BioScreen5(cont: NavController) {
                 .fillMaxWidth()
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF6200EE),
-                contentColor = Color.White
+                containerColor = Color(0xFFFFFFFF),
+                contentColor = Color(0xFF01579B)
             ),
             shape = androidx.compose.foundation.shape.RoundedCornerShape(12.dp),
             elevation = ButtonDefaults.buttonElevation(
